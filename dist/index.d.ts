@@ -12,5 +12,6 @@ export default class MakerMSIX extends MakerBase<MakerMSIXConfig> {
     name: string;
     defaultPlatforms: ForgePlatform[];
     isSupportedOnCurrentPlatform(): boolean;
+    ensureExternalBinariesExist(): boolean;
     make({ dir, makeDir, appName, packageJSON, targetArch }: MakerOptions): Promise<any[]>;
 }
