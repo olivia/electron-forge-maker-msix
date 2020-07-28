@@ -90,6 +90,10 @@ export default class MakerMSIX extends MakerBase<MakerMSIXConfig> {
     return process.platform === 'win32';
   }
 
+  ensureExternalBinariesExist() {
+    return true;
+  }
+
   async make({dir, makeDir, appName, packageJSON, targetArch}: MakerOptions) {
     const outPath = path.resolve(makeDir, `msix/${targetArch}`);
     await this.ensureDirectory(outPath);
